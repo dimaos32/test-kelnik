@@ -24,6 +24,9 @@
 @import "blocks/modal";
 @import "blocks/apartment-search";
 @import "blocks/search-filter";
+@import "blocks/search-result";
+@import "blocks/sort-bar";
+@import "blocks/apartment-card";
 
 // Модуль для тестирования, не должен быть в финальной версии и версии для клиента
 @import "vendor/test";

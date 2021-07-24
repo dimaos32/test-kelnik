@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
-    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol></svg></div>
+    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol><symbol id="icon-shevron" viewBox="0 0 7 4">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.82332 3.7465C2.98558 3.91016 3.19984 4 3.42953 4C3.65864 4 3.87404 3.91016 4.03517 3.7465L6.69026 0.987232C6.91366 0.761203 6.91366 0.395551 6.69026 0.169522C6.46743 -0.0565073 6.10577 -0.0565073 5.88236 0.169522L3.42953 2.72451L0.976121 0.169522C0.75272 -0.0565073 0.391623 -0.0565073 0.168222 0.169522C-0.0551788 0.395551 -0.0551788 0.761203 0.168222 0.987232L2.82332 3.7465Z" fill="currentColor"/>
+</symbol></svg>
+    </div>
     <div class="wrapper">
       <header class="header">
         <div class="header__wrapper"><a class="header__logo">Логотип</a>
@@ -94,21 +97,51 @@
             <div class="apartment-search__result">
               <h2 class="apartment-search__title">Квартиры</h2>
               <div class="search-result">
-                <div class="search-result__sort-bar"></div>
-                <ul class="search-result__list">
-                  <li class="search-result__item">
-                    <div class="flat-card">fhghghgh</div>
-                  </li>
-                  <li class="search-result__item">
-                    <div class="flat-card">fhghghgh</div>
-                  </li>
-                  <li class="search-result__item">
-                    <div class="flat-card">fhghghgh</div>
-                  </li>
-                  <li class="search-result__item">
-                    <div class="flat-card">fhghghgh</div>
-                  </li>
-                </ul>
+                <div class="search-result__sort-bar">
+                  <div class="sort-bar">
+                    <ul class="sort-bar__list">
+                      <li class="sort-bar__item sort-bar__item--layout">Планировка</li>
+                      <li class="sort-bar__item sort-bar__item--apartment">Квартира</li>
+                      <li class="sort-bar__item sort-bar__item--btn">
+                        <button class="sort-bar__btn" type="button"><span>S, м²</span>
+                          <div class="sort-bar__btn-icons">
+                            <svg class="sort-bar__btn-icon sort-bar__btn-icon--direct" width="7" height="4" aria-hidden="true">
+                              <use xlink:href="#icon-shevron"></use>
+                            </svg>
+                            <svg class="sort-bar__btn-icon sort-bar__btn-icon--reverse" width="7" height="4" aria-hidden="true">
+                              <use xlink:href="#icon-shevron"></use>
+                            </svg>
+                          </div>
+                        </button>
+                      </li>
+                      <li class="sort-bar__item sort-bar__item--btn">
+                        <button class="sort-bar__btn" type="button"><span>Этаж</span>
+                          <div class="sort-bar__btn-icons">
+                            <svg class="sort-bar__btn-icon sort-bar__btn-icon--direct" width="7" height="4" aria-hidden="true">
+                              <use xlink:href="#icon-shevron"></use>
+                            </svg>
+                            <svg class="sort-bar__btn-icon sort-bar__btn-icon--reverse" width="7" height="4" aria-hidden="true">
+                              <use xlink:href="#icon-shevron"></use>
+                            </svg>
+                          </div>
+                        </button>
+                      </li>
+                      <li class="sort-bar__item sort-bar__item--btn">
+                        <button class="sort-bar__btn current" type="button" data-sort-direction="direct"><span>Цена, ₽</span>
+                          <div class="sort-bar__btn-icons">
+                            <svg class="sort-bar__btn-icon sort-bar__btn-icon--direct" width="7" height="4" aria-hidden="true">
+                              <use xlink:href="#icon-shevron"></use>
+                            </svg>
+                            <svg class="sort-bar__btn-icon sort-bar__btn-icon--reverse" width="7" height="4" aria-hidden="true">
+                              <use xlink:href="#icon-shevron"></use>
+                            </svg>
+                          </div>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <ul class="search-result__list"></ul>
               </div>
             </div>
           </div>
@@ -116,6 +149,15 @@
       </main>
       <footer class="footer"></footer>
     </div>
+    <template id="apartment-card">
+      <div class="apartment-card">
+        <div class="apartment-card__img"><img src="#" width="80" height="80" alt=""></div>
+        <div class="apartment-card__title"></div>
+        <div class="apartment-card__square"></div>
+        <div class="apartment-card__floor"></div>
+        <div class="apartment-card__price"></div>
+      </div>
+    </template>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

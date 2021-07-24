@@ -1,14 +1,3 @@
-// @font-face {
-//   font-style: normal;
-//   font-weight: 400;
-//   font-family: "Rouble";
-
-//   font-display: swap;
-//   src:
-//     url("../fonts/rouble.woff2") format("woff2"),
-//     url("../fonts/rouble.woff") format("woff");
-// }
-
 @font-face {
   font-style: normal;
   font-weight: 400;
@@ -16,8 +5,8 @@
 
   font-display: swap;
   src:
-    url("../../fonts/pt-root-ui-regular.woff2") format("woff2"),
-    url("../../fonts/pt-root-ui-regular.woff") format("woff");
+    url("../fonts/pt-root-ui-regular.woff2") format("woff2"),
+    url("../fonts/pt-root-ui-regular.woff") format("woff");
 }
 
 @font-face {
@@ -27,8 +16,8 @@
 
   font-display: swap;
   src:
-    url("../../fonts/pt-root-ui-medium.woff2") format("woff2"),
-    url("../../fonts/pt-root-ui-medium.woff") format("woff");
+    url("../fonts/pt-root-ui-medium.woff2") format("woff2"),
+    url("../fonts/pt-root-ui-medium.woff") format("woff");
 }
 
 @font-face {
@@ -38,6 +27,6 @@
 
   font-display: swap;
   src:
-    url("../../fonts/pt-root-ui-bold.woff2") format("woff2"),
-    url("../../fonts/pt-root-ui-bold.woff") format("woff");
+    url("../fonts/pt-root-ui-bold.woff2") format("woff2"),
+    url("../fonts/pt-root-ui-bold.woff") format("woff");
 }

@@ -1,0 +1,23 @@
+mixin sort-bar
+  .sort-bar
+    ul.sort-bar__list
+      li.sort-bar__item.sort-bar__item--layout Планировка
+      li.sort-bar__item.sort-bar__item--apartment Квартира
+      li.sort-bar__item.sort-bar__item--btn
+        button.sort-bar__btn(type="button")
+          span S, м²
+          .sort-bar__btn-icons
+            +icon("icon-shevron", 7 ,4).sort-bar__btn-icon.sort-bar__btn-icon--direct
+            +icon("icon-shevron", 7 ,4).sort-bar__btn-icon.sort-bar__btn-icon--reverse
+      li.sort-bar__item.sort-bar__item--btn
+        button.sort-bar__btn(type="button")
+          span Этаж
+          .sort-bar__btn-icons
+            +icon("icon-shevron", 7 ,4).sort-bar__btn-icon.sort-bar__btn-icon--direct
+            +icon("icon-shevron", 7 ,4).sort-bar__btn-icon.sort-bar__btn-icon--reverse
+      li.sort-bar__item.sort-bar__item--btn
+        button.sort-bar__btn.current(type="button" data-sort-direction="direct")
+          span Цена, ₽
+          .sort-bar__btn-icons
+            +icon("icon-shevron", 7 ,4).sort-bar__btn-icon.sort-bar__btn-icon--direct
+            +icon("icon-shevron", 7 ,4).sort-bar__btn-icon.sort-bar__btn-icon--reverse

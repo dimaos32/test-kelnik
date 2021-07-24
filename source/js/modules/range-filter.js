@@ -2,6 +2,7 @@ import noUiSlider from './../vendor/nouislider';
 
 const initRangeSlider = () => {
   const filter = document.querySelector('.search-filter');
+
   if (!filter) {
     return;
   }

@@ -1,0 +1,71 @@
+.sort-bar__list {
+  @include reset-list;
+
+  display: flex;
+}
+
+.sort-bar__item {
+  flex: 0 0 auto;
+
+  font-size: 14px;
+  line-height: 1.43;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &--layout {
+    width: 80px;
+  }
+
+  &--apartment {
+    flex: 1 1 auto;
+
+    min-width: 160px;
+  }
+
+  &--btn {
+    width: 120px;
+  }
+}
+
+.sort-bar__btn {
+  @include reset-btn;
+
+  display: flex;
+  align-items: center;
+
+  &.current {
+    font-weight: 500;
+    color: $color-medium-sea-green;
+  }
+}
+
+.sort-bar__btn-icons {
+  margin-left: 8px;
+
+  color: rgba($color-midnight-express, 0.4);
+}
+
+.sort-bar__btn-icon {
+  display: block;
+
+  width: 7px;
+  height: 4px;
+
+  &--direct {
+    margin-bottom: 2px;
+
+    transform: rotate(180deg);
+
+    .sort-bar__btn[data-sort-direction="direct"] & {
+      color: $color-medium-sea-green;
+    }
+  }
+
+  &--reverse {
+    .sort-bar__btn[data-sort-direction="reverse"] & {
+      color: $color-medium-sea-green;
+    }
+  }
+}

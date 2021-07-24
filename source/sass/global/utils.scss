@@ -46,14 +46,6 @@
   transition: none !important;
 }
 
-.rouble {
-  font-family: $font-family--rouble;
-  /* stylelint-disable */
-  text-transform: lowercase !important;
-  font-weight: 400 !important;
-  /* stylelint-enable */
-}
-
 // используйте для скрытия нежелательных анимаций-скачков при поворотах экрана
 @keyframes disableBreakpointAnimation {
   0% {

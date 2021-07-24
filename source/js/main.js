@@ -5,6 +5,7 @@ import {iosVhFix} from './utils/ios-vh-fix';
 
 import {initModals} from './modules/modals/init-modals';
 import {initRangeSlider} from './modules/range-filter';
+import {initSearchResult} from './modules/search-result';
 
 //-- этот скрипт загружает модуль для тестирования, его не должно быть в финальном билде и на проде для клиента
 import {testInstruments} from './vendor/testInstruments';
@@ -33,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
     testInstruments();
+    initSearchResult();
   });
 });
 
