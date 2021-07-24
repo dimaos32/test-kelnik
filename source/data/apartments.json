@@ -1,0 +1,77 @@
+[
+  {
+    "img": {
+      "location": "svg",
+      "file": "apartment.svg",
+      "altText": "План квартиры"
+    },
+    "title": "3-комнатная №104",
+    "square": 63.1,
+    "floor": {
+      "current": 1,
+      "total": 17
+    },
+    "rooms": 3,
+    "price": 6630500
+  },
+  {
+    "img": {
+      "location": "svg",
+      "file": "apartment.svg",
+      "altText": "План квартиры"
+    },
+    "title": "3-комнатная №104",
+    "square": 63.2,
+    "floor": {
+      "current": 2,
+      "total": 17
+    },
+    "rooms": 3,
+    "price": 6650759
+  },
+  {
+    "img": {
+      "location": "svg",
+      "file": "apartment.svg",
+      "altText": "План квартиры"
+    },
+    "title": "3-комнатная №104",
+    "square": 63.2,
+    "floor": {
+      "current": 3,
+      "total": 17
+    },
+    "rooms": 3,
+    "price": 6650759
+  },
+  {
+    "img": {
+      "location": "svg",
+      "file": "apartment.svg",
+      "altText": "План квартиры"
+    },
+    "title": "3-комнатная №104",
+    "square": 63.6,
+    "floor": {
+      "current": 4,
+      "total": 17
+    },
+    "rooms": 3,
+    "price": 6671314
+  },
+  {
+    "img": {
+      "location": "svg",
+      "file": "apartment.svg",
+      "altText": "План квартиры"
+    },
+    "title": "3-комнатная №104",
+    "square": 63.1,
+    "floor": {
+      "current": 5,
+      "total": 17
+    },
+    "rooms": 3,
+    "price": 6679554
+  }
+]

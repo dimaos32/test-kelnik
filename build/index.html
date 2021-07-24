@@ -61,7 +61,7 @@
                         <label class="search-filter__room-label" for="filter-rooms-4"><span>4к</span></label>
                       </li>
                     </ul>
-                    <div class="search-filter__range">
+                    <div class="search-filter__range search-filter__range--price">
                       <p class="search-filter__range-title">Стомость квартиры, ₽</p>
                       <div class="search-filter__range-values">
                         <div class="search-filter__range-value-wrapper"><span>от</span>
@@ -73,9 +73,9 @@
                       </div>
                       <input type="hidden" id="filter-min-price" value="5500000">
                       <input type="hidden" id="filter-max-price" value="18900000">
-                      <div class="search-filter__range-item search-filter__range-item--price"></div>
+                      <div class="search-filter__range-item"></div>
                     </div>
-                    <div class="search-filter__range">
+                    <div class="search-filter__range search-filter__range--square">
                       <p class="search-filter__range-title">Площадь, м²</p>
                       <div class="search-filter__range-values">
                         <div class="search-filter__range-value-wrapper"><span>от</span>
@@ -87,7 +87,7 @@
                       </div>
                       <input type="hidden" id="filter-min-square" value="33">
                       <input type="hidden" id="filter-max-square" value="123">
-                      <div class="search-filter__range-item search-filter__range-item--square"></div>
+                      <div class="search-filter__range-item"></div>
                     </div>
                     <button class="search-filter__reset-btn" type="button">Сбросить параметры</button>
                   </form>
@@ -157,6 +157,9 @@
         <div class="apartment-card__floor"></div>
         <div class="apartment-card__price"></div>
       </div>
+    </template>
+    <template id="error-request-response">
+      <p class="error-request-response"></p>
     </template>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>

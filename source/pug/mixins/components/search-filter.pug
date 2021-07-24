@@ -1,4 +1,3 @@
-
 mixin search-filter
   .search-filter
     .search-filter__form
@@ -20,7 +19,7 @@ mixin search-filter
             input(type="checkbox" id="filter-rooms-4" name="filter-rooms-4" data-rooms="4")
             label.search-filter__room-label(for="filter-rooms-4")
               span 4к
-        .search-filter__range
+        .search-filter__range.search-filter__range--price
           p.search-filter__range-title Стомость квартиры, ₽
           .search-filter__range-values
             .search-filter__range-value-wrapper
@@ -31,8 +30,8 @@ mixin search-filter
               .search-filter__range-value(id="high-price-border") 18 900 000
           input(type="hidden" id="filter-min-price" value="5500000")
           input(type="hidden" id="filter-max-price" value="18900000")
-          .search-filter__range-item.search-filter__range-item--price
-        .search-filter__range
+          .search-filter__range-item
+        .search-filter__range.search-filter__range--square
           p.search-filter__range-title Площадь, м²
           .search-filter__range-values
             .search-filter__range-value-wrapper
@@ -43,5 +42,5 @@ mixin search-filter
               .search-filter__range-value(id="high-square-border") 123
           input(type="hidden" id="filter-min-square" value="33")
           input(type="hidden" id="filter-max-square" value="123")
-          .search-filter__range-item.search-filter__range-item--square
+          .search-filter__range-item
         button.search-filter__reset-btn(type="button") Сбросить параметры

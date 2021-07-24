@@ -63,12 +63,12 @@
     box-shadow: 0 6px 20px $color-chinook;
   }
 
-  &:hover,
+  input:not(:disabled) ~ &:hover,
   input:focus + & {
     border-color: $color-medium-sea-green;
   }
 
-  input:checked + &:hover,
+  input:not(:disabled):checked + &:hover,
   input:checked:focus + & {
     border-color: $color-default-white;
   }

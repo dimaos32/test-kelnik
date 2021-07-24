@@ -1286,12 +1286,12 @@ input:checked + .search-filter__room-label {
   box-shadow: 0 6px 20px #95d0a1;
 }
 
-.search-filter__room-label:hover,
+input:not(:disabled) ~ .search-filter__room-label:hover,
 input:focus + .search-filter__room-label {
   border-color: #3eb57c;
 }
 
-input:checked + .search-filter__room-label:hover,
+input:not(:disabled):checked + .search-filter__room-label:hover,
 input:checked:focus + .search-filter__room-label {
   border-color: #ffffff;
 }
