@@ -12,10 +12,32 @@
 @font-face {
   font-style: normal;
   font-weight: 400;
-  font-family: "";
+  font-family: "PT Root UI";
 
   font-display: swap;
   src:
-    url("../fonts/.woff2") format("woff2"),
-    url("../fonts/.woff") format("woff");
+    url("../../fonts/pt-root-ui-regular.woff2") format("woff2"),
+    url("../../fonts/pt-root-ui-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "PT Root UI";
+
+  font-display: swap;
+  src:
+    url("../../fonts/pt-root-ui-medium.woff2") format("woff2"),
+    url("../../fonts/pt-root-ui-medium.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "PT Root UI";
+
+  font-display: swap;
+  src:
+    url("../../fonts/pt-root-ui-bold.woff2") format("woff2"),
+    url("../../fonts/pt-root-ui-bold.woff") format("woff");
 }
