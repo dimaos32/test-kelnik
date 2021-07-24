@@ -33,16 +33,86 @@
         </div>
       </header>
       <main>
-        <div class="container">
-          <p style="margin-top: 40px;">Пример импорта из `pug/data`</p>
-          <h3>Заголовок</h3>
-          <p>&lt;b&gt;Описание&lt;/b&gt;</p>
-          <p><b>Описание</b></p>
-          <p><b>Описание</b></p>
-          <p style="margin-top: 40px;">Пример использования +img()</p>
-          <p style="margin-bottom: 40px;"><img src="img/content/placeholder.png" srcset="img/content/placeholder@2x.png 2x" width="120" height="120" alt="Пример">
-          </p>
-        </div>
+        <h1 class="visually-hidden">Поиск квартир</h1>
+        <section class="apartment-search">
+          <div class="container apartment-search__container">
+            <div class="apartment-search__filter">
+              <div class="search-filter">
+                <div class="search-filter__form">
+                  <form action="#" method="POST">
+                    <ul class="search-filter__rooms">
+                      <li class="search-filter__room">
+                        <input type="checkbox" id="filter-rooms-1" name="filter-rooms-1" data-rooms="1">
+                        <label class="search-filter__room-label" for="filter-rooms-1"><span>1к</span></label>
+                      </li>
+                      <li class="search-filter__room">
+                        <input type="checkbox" id="filter-rooms-2" name="filter-rooms-2" data-rooms="2">
+                        <label class="search-filter__room-label" for="filter-rooms-2"><span>2к</span></label>
+                      </li>
+                      <li class="search-filter__room">
+                        <input type="checkbox" id="filter-rooms-3" name="filter-rooms-3" data-rooms="3">
+                        <label class="search-filter__room-label" for="filter-rooms-3"><span>3к</span></label>
+                      </li>
+                      <li class="search-filter__room">
+                        <input type="checkbox" id="filter-rooms-4" name="filter-rooms-4" data-rooms="4">
+                        <label class="search-filter__room-label" for="filter-rooms-4"><span>4к</span></label>
+                      </li>
+                    </ul>
+                    <div class="search-filter__range">
+                      <p class="search-filter__range-title">Стомость квартиры, ₽</p>
+                      <div class="search-filter__range-values">
+                        <div class="search-filter__range-value-wrapper"><span>от</span>
+                          <div class="search-filter__range-value" id="low-price-border">5 500 000</div>
+                        </div>
+                        <div class="search-filter__range-value-wrapper"><span>до</span>
+                          <div class="search-filter__range-value" id="high-price-border">18 900 000</div>
+                        </div>
+                      </div>
+                      <input type="hidden" id="filter-min-price" value="5500000">
+                      <input type="hidden" id="filter-max-price" value="18900000">
+                      <div class="search-filter__range-item search-filter__range-item--price"></div>
+                    </div>
+                    <div class="search-filter__range">
+                      <p class="search-filter__range-title">Площадь, м²</p>
+                      <div class="search-filter__range-values">
+                        <div class="search-filter__range-value-wrapper"><span>от</span>
+                          <div class="search-filter__range-value" id="low-square-border">33</div>
+                        </div>
+                        <div class="search-filter__range-value-wrapper"><span>до</span>
+                          <div class="search-filter__range-value" id="high-square-border">123</div>
+                        </div>
+                      </div>
+                      <input type="hidden" id="filter-min-square" value="33">
+                      <input type="hidden" id="filter-max-square" value="123">
+                      <div class="search-filter__range-item search-filter__range-item--square"></div>
+                    </div>
+                    <button class="search-filter__reset-btn" type="button">Сбросить параметры</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="apartment-search__result">
+              <h2 class="apartment-search__title">Квартиры</h2>
+              <div class="search-result">
+                <div class="search-result__sort-bar"></div>
+                <ul class="search-result__list">
+                  <li class="search-result__item">
+                    <div class="flat-card">fhghghgh</div>
+                  </li>
+                  <li class="search-result__item">
+                    <div class="flat-card">fhghghgh</div>
+                  </li>
+                  <li class="search-result__item">
+                    <div class="flat-card">fhghghgh</div>
+                  </li>
+                  <li class="search-result__item">
+                    <div class="flat-card">fhghghgh</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="footer"></footer>
     </div>

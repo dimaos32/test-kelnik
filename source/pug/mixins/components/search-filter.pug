@@ -1,0 +1,47 @@
+
+mixin search-filter
+  .search-filter
+    .search-filter__form
+      form(action="#" method="POST")
+        ul.search-filter__rooms
+          li.search-filter__room
+            input(type="checkbox" id="filter-rooms-1" name="filter-rooms-1" data-rooms="1")
+            label.search-filter__room-label(for="filter-rooms-1")
+              span 1к
+          li.search-filter__room
+            input(type="checkbox" id="filter-rooms-2" name="filter-rooms-2" data-rooms="2")
+            label.search-filter__room-label(for="filter-rooms-2")
+              span 2к
+          li.search-filter__room
+            input(type="checkbox" id="filter-rooms-3" name="filter-rooms-3" data-rooms="3")
+            label.search-filter__room-label(for="filter-rooms-3")
+              span 3к
+          li.search-filter__room
+            input(type="checkbox" id="filter-rooms-4" name="filter-rooms-4" data-rooms="4")
+            label.search-filter__room-label(for="filter-rooms-4")
+              span 4к
+        .search-filter__range
+          p.search-filter__range-title Стомость квартиры, ₽
+          .search-filter__range-values
+            .search-filter__range-value-wrapper
+              span от
+              .search-filter__range-value(id="low-price-border") 5 500 000
+            .search-filter__range-value-wrapper
+              span до
+              .search-filter__range-value(id="high-price-border") 18 900 000
+          input(type="hidden" id="filter-min-price" value="5500000")
+          input(type="hidden" id="filter-max-price" value="18900000")
+          .search-filter__range-item.search-filter__range-item--price
+        .search-filter__range
+          p.search-filter__range-title Площадь, м²
+          .search-filter__range-values
+            .search-filter__range-value-wrapper
+              span от
+              .search-filter__range-value(id="low-square-border") 33
+            .search-filter__range-value-wrapper
+              span до
+              .search-filter__range-value(id="high-square-border") 123
+          input(type="hidden" id="filter-min-square" value="33")
+          input(type="hidden" id="filter-max-square" value="123")
+          .search-filter__range-item.search-filter__range-item--square
+        button.search-filter__reset-btn(type="button") Сбросить параметры

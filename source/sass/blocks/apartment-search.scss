@@ -1,0 +1,31 @@
+.apartment-search {
+  margin: 96px 0;
+
+}
+
+.apartment-search__container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+}
+
+.apartment-search__filter {
+  flex: 0 0 auto;
+
+  margin-left: 80px;
+}
+
+.apartment-search__result {
+  flex: 1 1 auto;
+
+  outline: 1px dashed red;
+}
+
+.apartment-search__title {
+  margin: 0;
+  margin-bottom: 48px;
+
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 1.02;
+}

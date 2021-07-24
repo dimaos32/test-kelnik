@@ -2,6 +2,7 @@
 //---------------------------------
 
 @import "vendor/normalize";
+@import "vendor/nouislider";
 // @import "vendor/swiper";
 
 // Global
@@ -21,6 +22,8 @@
 @import "blocks/main-nav";
 @import "blocks/footer";
 @import "blocks/modal";
+@import "blocks/apartment-search";
+@import "blocks/search-filter";
 
 // Модуль для тестирования, не должен быть в финальной версии и версии для клиента
 @import "vendor/test";
