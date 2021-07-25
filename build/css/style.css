@@ -1448,12 +1448,50 @@ input:checked:focus + .search-filter__room-label {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.search-result__list:not(:last-child) {
+  margin-bottom: 48px;
+}
+
 .search-result__item {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .search-result__item:not(:last-child) {
   margin-bottom: 8px;
+}
+
+.search-result__load-more-btn {
+  padding: 0;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+  padding: 7px 23px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid rgba(11, 23, 57, 0.2);
+  border-radius: 20px;
+  -webkit-transition: color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-result__load-more-btn:not(:disabled) {
+  cursor: pointer;
+}
+
+.search-result__load-more-btn:not(:disabled):hover,
+.search-result__load-more-btn:focus {
+  color: #3eb57c;
+  border-color: #3eb57c;
+}
+
+.search-result__load-more-btn.hidden {
+  display: none;
 }
 
 .sort-bar__list {

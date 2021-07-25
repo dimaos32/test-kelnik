@@ -4,10 +4,11 @@ import {loadData} from './backend';
 const FIRST_LOAD = 5; // apartments
 const LOAD_MORE = 20; // apartments
 
-
+let currentData = [];
 
 const searchResult = document.querySelector('.search-result');
 const resultList = searchResult.querySelector('.search-result__list');
+const loadMoreBtn = searchResult.querySelector('.search-result__load-more-btn');
 
 const checkboxGroup = document.querySelector('.search-filter__rooms');
 const checkboxes = checkboxGroup.querySelectorAll('.search-filter__room input');
@@ -56,6 +57,23 @@ const renderErrorMessage = (message) => {
   resultList.append(listItem);
 };
 
+const renderNextNCards = (quantity = LOAD_MORE) => {
+  const startIndex = resultList.children.length;
+  const endIndex = currentData.length - startIndex < quantity ?
+    currentData.length :
+    startIndex + quantity;
+
+  for (let i = startIndex; i < endIndex; i++) {
+    renderApartmentCard(currentData[i]);
+  }
+
+  if (endIndex < currentData.length) {
+    loadMoreBtn.classList.remove('hidden');
+  } else {
+    loadMoreBtn.classList.add('hidden');
+  }
+};
+
 const cbLoadDataSuccess = (data) => {
   let roomsFilterIsActive = false;
 
@@ -65,7 +83,7 @@ const cbLoadDataSuccess = (data) => {
     }
   }
 
-  const currentData = data.filter((apartment) => {
+  currentData = data.filter((apartment) => {
     const currentCheckbox = checkboxGroup.querySelector(`[data-rooms="${apartment.rooms}"]`);
 
     return apartment.price >= filterMinPrice.value &&
@@ -77,9 +95,12 @@ const cbLoadDataSuccess = (data) => {
 
   resultList.innerHTML = '';
 
-  currentData.forEach((apartment) => {
-    renderApartmentCard(apartment);
-  });
+  renderNextNCards(FIRST_LOAD);
+};
+
+const onLoadMoreBtnClick = () => {
+  console.log('load more');
+  renderNextNCards(LOAD_MORE);
 };
 
 const cbLoadDataError = (data) => {
@@ -94,6 +115,8 @@ const initSearchResult = () => {
   }
 
   loadData(cbLoadDataSuccess, cbLoadDataError);
+
+  loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 };
 
 export {initSearchResult, cbLoadDataSuccess, cbLoadDataError};
