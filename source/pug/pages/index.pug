@@ -1,13 +1,12 @@
 extends ../base/layout
 
 block variables
-  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Тестовое задание"
   - const wrapperMods = ""
-  - const hasHeader = true
+  - const hasHeader = false
   - const headerMods = ""
-  - const hasFooter = true
+  - const hasFooter = false
   - const footerMods = ""
-  - const currentPage = "main" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
   main
@@ -25,8 +24,6 @@ block main
             button.search-result__load-more-btn(type="button") Загрузить еще
         button.apartment-search__scroll-up-btn.hidden(type="button" aria-label="Наверх")
           +icon("icon-arrow", 10, 16)
-
-block modals
 
 block templates
   +apartment-card
