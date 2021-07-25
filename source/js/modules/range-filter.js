@@ -68,6 +68,10 @@ const initRangeSlider = () => {
     checkboxes.forEach((checkbox) => {
       checkbox.checked = false;
     });
+
+    setTimeout(() => {
+      loadData(cbLoadDataSuccess, cbLoadDataError);
+    }, 300);
   };
 
   const onCheckboxChange = ({target}) => {

@@ -1,8 +1,20 @@
 import {formatPrice} from './utils';
 import {loadData} from './backend';
 
+const FIRST_LOAD = 5; // apartments
+const LOAD_MORE = 20; // apartments
+
+
+
 const searchResult = document.querySelector('.search-result');
 const resultList = searchResult.querySelector('.search-result__list');
+
+const checkboxGroup = document.querySelector('.search-filter__rooms');
+const checkboxes = checkboxGroup.querySelectorAll('.search-filter__room input');
+const filterMinPrice = document.querySelector('#filter-min-price');
+const filterMaxPrice = document.querySelector('#filter-max-price');
+const filterMinSquare = document.querySelector('#filter-min-square');
+const filterMaxSquare = document.querySelector('#filter-max-square');
 
 const apartmentTemplate = document.querySelector('#apartment-card')
     .content
@@ -45,9 +57,27 @@ const renderErrorMessage = (message) => {
 };
 
 const cbLoadDataSuccess = (data) => {
+  let roomsFilterIsActive = false;
+
+  for (let checkbox of checkboxes) {
+    if (checkbox.checked) {
+      roomsFilterIsActive = true;
+    }
+  }
+
+  const currentData = data.filter((apartment) => {
+    const currentCheckbox = checkboxGroup.querySelector(`[data-rooms="${apartment.rooms}"]`);
+
+    return apartment.price >= filterMinPrice.value &&
+      apartment.price <= filterMaxPrice.value &&
+      apartment.square >= filterMinSquare.value &&
+      apartment.square <= filterMaxSquare.value &&
+      (!roomsFilterIsActive || currentCheckbox.checked);
+  });
+
   resultList.innerHTML = '';
 
-  data.forEach((apartment) => {
+  currentData.forEach((apartment) => {
     renderApartmentCard(apartment);
   });
 };
@@ -59,11 +89,11 @@ const cbLoadDataError = (data) => {
 const initSearchResult = () => {
   const filter = document.querySelector('.search-filter');
 
-  if (!searchResult) {
+  if (!filter) {
     return;
   }
 
   loadData(cbLoadDataSuccess, cbLoadDataError);
 };
 
-export {initSearchResult, loadData, cbLoadDataSuccess, cbLoadDataError};
+export {initSearchResult, cbLoadDataSuccess, cbLoadDataError};
