@@ -9,6 +9,7 @@ let currentData = [];
 const searchResult = document.querySelector('.search-result');
 const resultList = searchResult.querySelector('.search-result__list');
 const loadMoreBtn = searchResult.querySelector('.search-result__load-more-btn');
+const sortBar = searchResult.querySelector('.sort-bar__list');
 
 const checkboxGroup = document.querySelector('.search-filter__rooms');
 const checkboxes = checkboxGroup.querySelectorAll('.search-filter__room input');
@@ -44,6 +45,8 @@ const renderApartmentCard = (data) => {
   listItem.classList.add('search-result__item');
   listItem.append(card);
   resultList.append(listItem);
+
+  // console.log(data['square'], data['floor']['current'], data['price']);
 };
 
 const renderErrorMessage = (message) => {
@@ -75,6 +78,7 @@ const renderNextNCards = (quantity = LOAD_MORE) => {
 };
 
 const cbLoadDataSuccess = (data) => {
+  const currentSortBtn = sortBar.querySelector('.sort-bar__btn.current');
   let roomsFilterIsActive = false;
 
   for (let checkbox of checkboxes) {
@@ -93,14 +97,57 @@ const cbLoadDataSuccess = (data) => {
       (!roomsFilterIsActive || currentCheckbox.checked);
   });
 
+  sortCards(currentData, currentSortBtn.dataset.sortType, currentSortBtn.dataset.sortDirection);
+
   resultList.innerHTML = '';
 
   renderNextNCards(FIRST_LOAD);
 };
 
 const onLoadMoreBtnClick = () => {
-  console.log('load more');
   renderNextNCards(LOAD_MORE);
+};
+
+const sortCards = (cards, sortKey, direction = 'direct') => {
+
+  return cards.sort((a, b) => {
+    if (sortKey === 'floor') {
+      if (direction === 'direct') {
+        return a.floor.current - b.floor.current;
+      }
+      return b.floor.current - a.floor.current;
+    }
+    if (direction === 'direct') {
+      return a[sortKey] - b[sortKey];
+    }
+    return b[sortKey] - a[sortKey];
+  });
+};
+
+const onSortBarClick = ({target}) => {
+  const btn = target.closest('.sort-bar__btn');
+  let renderedCards = currentData.slice(0, resultList.children.length);
+
+  if (btn) {
+    if (btn.classList.contains('current')) {
+      btn.dataset.sortDirection = btn.dataset.sortDirection === 'direct' ?
+        'reverse' :
+        'direct';
+    } else {
+      const currentBtn = sortBar.querySelector('.sort-bar__btn.current');
+      currentBtn.classList.remove('current');
+      btn.classList.add('current');
+      btn.dataset.sortDirection = 'direct';
+    }
+
+    sortCards(renderedCards, btn.dataset.sortType, btn.dataset.sortDirection);
+
+    resultList.innerHTML = '';
+
+    renderedCards.forEach((card) => {
+      renderApartmentCard(card);
+    });
+  }
 };
 
 const cbLoadDataError = (data) => {
@@ -117,6 +164,7 @@ const initSearchResult = () => {
   loadData(cbLoadDataSuccess, cbLoadDataError);
 
   loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
+  sortBar.addEventListener('click', onSortBarClick);
 };
 
 export {initSearchResult, cbLoadDataSuccess, cbLoadDataError};

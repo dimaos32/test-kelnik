@@ -58,13 +58,13 @@
 
     transform: rotate(180deg);
 
-    .sort-bar__btn[data-sort-direction="direct"] & {
+    .sort-bar__btn.current[data-sort-direction="direct"] & {
       color: $color-medium-sea-green;
     }
   }
 
   &--reverse {
-    .sort-bar__btn[data-sort-direction="reverse"] & {
+    .sort-bar__btn.current[data-sort-direction="reverse"] & {
       color: $color-medium-sea-green;
     }
   }

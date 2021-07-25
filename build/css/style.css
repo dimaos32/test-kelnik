@@ -1574,11 +1574,11 @@ input:checked:focus + .search-filter__room-label {
   transform: rotate(180deg);
 }
 
-.sort-bar__btn[data-sort-direction="direct"] .sort-bar__btn-icon--direct {
+.sort-bar__btn.current[data-sort-direction="direct"] .sort-bar__btn-icon--direct {
   color: #3eb57c;
 }
 
-.sort-bar__btn[data-sort-direction="reverse"] .sort-bar__btn-icon--reverse {
+.sort-bar__btn.current[data-sort-direction="reverse"] .sort-bar__btn-icon--reverse {
   color: #3eb57c;
 }
 
