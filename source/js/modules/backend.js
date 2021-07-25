@@ -1,4 +1,4 @@
-const API_URL = './../data/apartments.json';
+const API_URL = 'https://dimaos32.github.io/test-kelnik/data/apartments.json';
 const MILISECONDS_IN_SECOND = 1000; // ms
 const TIMEOUT = 10000; // ms
 
