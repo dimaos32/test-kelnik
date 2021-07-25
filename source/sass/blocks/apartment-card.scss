@@ -4,8 +4,14 @@
 
   padding: 16px 0;
 
-  font-size: 16px;
-  line-height: 1.5;
+  @include vp--1387 {
+    flex-direction: row-reverse;
+
+    padding: 16px 24px;
+
+    border: 1px solid rgba($color-default-black, 0.1);
+    border-radius: 8px;
+  }
 }
 
 .apartment-card__img {
@@ -15,9 +21,23 @@
   margin-right: 20px;
 
   img {
+    object-fit: contain;
+
     width: 80px;
     height: 80px;
-    object-fit: contain;
+  }
+
+  @include vp--1387 {
+    margin-right: 0;
+  }
+}
+
+.apartment-card__info {
+  flex: 1 1 auto;
+  display: flex;
+
+  @include vp--1387 {
+    display: block;
   }
 }
 
@@ -28,6 +48,19 @@
   margin-right: 20px;
 
   font-weight: 500;
+
+  @include vp--1387 {
+    margin-bottom: 12px;
+  }
+}
+
+.apartment-card__details {
+  flex: 0 0 auto;
+  display: flex;
+
+  @include vp--1387 {
+    flex-wrap: wrap;
+  }
 }
 
 .apartment-card__square {
@@ -35,6 +68,21 @@
 
   width: 120px;
   margin-right: 20px;
+
+  .unit {
+    display: none;
+  }
+
+  @include vp--1387 {
+    width: unset;
+    margin-top: 4px;
+
+    font-weight: 500;
+
+    .unit {
+      display: inline;
+    }
+  }
 }
 
 .apartment-card__floor {
@@ -45,8 +93,21 @@
 
   color: rgba($color-midnight-express, 0.5);
 
-  span {
+  .accent {
     color: $color-midnight-express;
+  }
+
+  .unit {
+    display: none;
+  }
+
+  @include vp--1387 {
+    width: unset;
+    margin-top: 4px;
+
+    .unit {
+      display: inline;
+    }
   }
 }
 
@@ -54,4 +115,20 @@
   flex: 0 0 auto;
 
   width: 120px;
+
+  .unit {
+    display: none;
+  }
+
+  @include vp--1387 {
+    width: unset;
+    margin-top: 4px;
+    margin-right: 20px;
+
+    font-weight: 500;
+
+    .unit {
+      display: inline;
+    }
+  }
 }

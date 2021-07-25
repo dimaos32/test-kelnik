@@ -38,9 +38,9 @@ const renderApartmentCard = (data) => {
   cardImg.src = `img/${img.location}/${img.file}`;
   cardImg.alt = img.altText;
   cardTitle.textContent = title;
-  cardSquare.textContent = square.toString().replace('.', ',');
-  cardFloor.innerHTML = `<span>${floor.current}</span> из ${floor.total}`;
-  cardPrice.textContent = formatPrice(price);
+  cardSquare.innerHTML = `${square.toString().replace('.', ',')} <span class="unit">м²</span>`;
+  cardFloor.innerHTML = `<span class="accent">${floor.current}</span> из ${floor.total} <span class="unit">этаж</span>`;
+  cardPrice.innerHTML = `${formatPrice(price)} <span class="unit">₽</span>`;
 
   listItem.classList.add('search-result__item');
   listItem.append(card);
@@ -106,6 +106,8 @@ const cbLoadDataSuccess = (data) => {
 
 const onLoadMoreBtnClick = () => {
   renderNextNCards(LOAD_MORE);
+
+  loadMoreBtn.blur();
 };
 
 const sortCards = (cards, sortKey, direction = 'direct') => {
@@ -128,7 +130,7 @@ const onSortBarClick = ({target}) => {
   const btn = target.closest('.sort-bar__btn');
   let renderedCards = currentData.slice(0, resultList.children.length);
 
-  if (btn) {
+  if (btn && !btn.disabled) {
     if (btn.classList.contains('current')) {
       btn.dataset.sortDirection = btn.dataset.sortDirection === 'direct' ?
         'reverse' :

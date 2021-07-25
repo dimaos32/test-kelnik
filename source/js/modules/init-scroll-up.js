@@ -17,6 +17,7 @@ const initScrollUp = () => {
 
   const onScrollUpBtnClick = () => {
     window.scrollTo(0, 0);
+    scrollUpBtn.getBoundingClientRect();
   };
 
   window.addEventListener('scroll', onScroll);

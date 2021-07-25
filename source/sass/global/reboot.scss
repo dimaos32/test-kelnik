@@ -35,6 +35,11 @@ body {
   text-rendering: optimizeLegibility;
   // если по прежнему есть проблемы с выравниванием
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
+
+  @include vp--1199 {
+    font-size: 14px;
+    line-height: 1.43;
+  }
 }
 
 a {

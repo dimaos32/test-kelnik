@@ -1,5 +1,9 @@
 .search-result__sort-bar {
   margin-bottom: 16px;
+
+  @include vp--1387 {
+    margin-bottom: 12px;
+  }
 }
 
 .search-result__list {
@@ -10,6 +14,14 @@
   &:not(:last-child) {
     margin-bottom: 48px;
   }
+
+  @include vp--1387 {
+    border: none;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
 }
 
 .search-result__item {
@@ -17,6 +29,16 @@
 
   &:not(:last-child) {
     margin-bottom: 8px;
+  }
+
+  @include vp--1387 {
+    border: none;
+  }
+
+  @include vp--1199 {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
   }
 }
 
@@ -26,8 +48,6 @@
   padding: 7px 23px;
 
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
 
   border: 1px solid rgba($color-midnight-express, 0.2);
   border-radius: 20px;
@@ -44,5 +64,10 @@
 
   &.hidden {
     display: none;
+  }
+
+  @include vp--1199 {
+    font-size: 15px;
+    line-height: 1.47;
   }
 }

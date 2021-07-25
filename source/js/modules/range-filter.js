@@ -5,7 +5,7 @@ import noUiSlider from './../vendor/nouislider';
 
 const DefaultSettings = {
   priceRange: {
-    start: [5500000, 18900000],
+    start: [0, 35000000],
     step: 100000,
     range: {
       min: 0,
@@ -13,7 +13,7 @@ const DefaultSettings = {
     },
   },
   squareRange: {
-    start: [33, 123],
+    start: [10, 250],
     step: 1,
     range: {
       min: 10,
@@ -69,9 +69,7 @@ const initRangeSlider = () => {
       checkbox.checked = false;
     });
 
-    setTimeout(() => {
-      loadData(cbLoadDataSuccess, cbLoadDataError);
-    }, 300);
+    loadData(cbLoadDataSuccess, cbLoadDataError);
   };
 
   const onCheckboxChange = ({target}) => {

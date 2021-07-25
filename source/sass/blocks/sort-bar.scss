@@ -24,8 +24,30 @@
     min-width: 160px;
   }
 
+  &--hand-over {
+    display: none;
+  }
+
   &--btn {
     width: 120px;
+  }
+
+  @include vp--1387 {
+    &--layout {
+      display: none;
+    }
+
+    &--apartment {
+      display: none;
+    }
+
+    &--hand-over {
+      display: block;
+    }
+
+    &--btn {
+      width: unset;
+    }
   }
 }
 

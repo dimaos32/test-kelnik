@@ -4,6 +4,20 @@
 
   background-image: $gradient-filter;
   border-radius: 10px;
+
+  @include vp--1199 {
+    width: 320px;
+    padding: 20px;
+  }
+
+  @include vp--959{
+    width: 100%;
+    max-width: 480px;
+  }
+
+  @include vp--599{
+    padding: 16px;
+  }
 }
 
 .search-filter__rooms {
@@ -40,9 +54,6 @@
 
   width: 44px;
   height: 44px;
-
-  font-size: 16px;
-  line-height: 1.5;
 
   background-color: $color-default-white;
   border: 2px solid $color-default-white;
@@ -86,6 +97,11 @@
 
   font-size: 14px;
   line-height: 1.43;
+
+  @include vp--1199 {
+    font-size: 13px;
+    line-height: 1.38;
+  }
 }
 
 .search-filter__range-values {
@@ -99,15 +115,18 @@
 .search-filter__range-value-wrapper {
   display: flex;
 
-  font-size: 16px;
-  line-height: 1.5;
-
   span {
     opacity: 0.5;
   }
 
   &:not(:last-child) {
     margin-right: 36px;
+  }
+
+  @include vp--599 {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
   }
 }
 
@@ -116,6 +135,10 @@
   margin-left: 8px;
 
   font-weight: 500;
+
+  @include vp--599 {
+    width: 88px;
+  }
 }
 
 .search-filter__range-item {
@@ -176,7 +199,7 @@
   padding: 5px 24px 7px 8px;
 
   font-size: 14px;
-  line-height: 21.430px;
+  line-height: 1.43;
   color: $color-default-black;
 
   &::before,
@@ -208,5 +231,10 @@
   &:focus::before,
   &:focus::after {
     background-color: $color-medium-sea-green;
+  }
+
+  @include vp--1199 {
+    font-size: 13px;
+    line-height: 1.38;
   }
 }

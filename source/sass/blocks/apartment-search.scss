@@ -1,6 +1,13 @@
 .apartment-search {
   margin: 96px 0;
 
+  @include vp--1387 {
+    margin: 48px 0;
+  }
+
+  @include vp--959 {
+    margin: 24px 0;
+  }
 }
 
 .apartment-search__container {
@@ -9,12 +16,25 @@
   display: flex;
   align-items: flex-start;
   flex-direction: row-reverse;
+
+  @include vp--959 {
+    display: block;
+  }
 }
 
 .apartment-search__filter {
   flex: 0 0 auto;
 
   margin-left: 80px;
+
+  @include vp--1199 {
+    margin-left: 28px;
+  }
+
+  @include vp--959 {
+    margin-left: 0;
+    margin-bottom: 24px;
+  }
 }
 
 .apartment-search__result {
@@ -28,6 +48,10 @@
   font-weight: 700;
   font-size: 54px;
   line-height: 1.02;
+
+  @include vp--1387 {
+    margin-bottom: 32px;
+  }
 }
 
 .apartment-search__scroll-up-btn {

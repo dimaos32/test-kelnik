@@ -1,7 +1,6 @@
 const API_URL = './../data/apartments.json';
 const MILISECONDS_IN_SECOND = 1000; // ms
 const TIMEOUT = 10000; // ms
-const REQUEST_LOADING_TIME = 400; // ms
 
 const StatusCode = {
   OK: 200,
@@ -41,31 +40,29 @@ const enableFilters = () => {
 const loadData = (onSuccess, onError) => {
   disableFilters();
 
-  setTimeout(() => {
-    const xhr = new XMLHttpRequest();
-    xhr.responseType = 'json';
-    xhr.timeout = TIMEOUT;
+  const xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+  xhr.timeout = TIMEOUT;
 
-    xhr.open('GET', API_URL);
-    xhr.send();
+  xhr.open('GET', API_URL);
+  xhr.send();
 
-    xhr.addEventListener('load', () => {
-      if (xhr.status === StatusCode.OK) {
-        onSuccess(xhr.response);
-      } else {
-        onError(`Статус ответа: ${xhr.status} ${xhr.statusText}`);
-      }
-    });
+  xhr.addEventListener('load', () => {
+    if (xhr.status === StatusCode.OK) {
+      onSuccess(xhr.response);
+    } else {
+      onError(`Статус ответа: ${xhr.status} ${xhr.statusText}`);
+    }
+  });
 
-    xhr.addEventListener('error', function () {
-      onError('Произошла ошибка соединения');
-    });
-    xhr.addEventListener('timeout', function () {
-      onError(`Запрос не успел выполниться за ${xhr.timeout / MILISECONDS_IN_SECOND} с`);
-    });
+  xhr.addEventListener('error', function () {
+    onError('Произошла ошибка соединения');
+  });
+  xhr.addEventListener('timeout', function () {
+    onError(`Запрос не успел выполниться за ${xhr.timeout / MILISECONDS_IN_SECOND} с`);
+  });
 
-    enableFilters();
-  }, REQUEST_LOADING_TIME);
+  enableFilters();
 };
 
 export {loadData};
