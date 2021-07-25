@@ -6,6 +6,7 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {initRangeSlider} from './modules/range-filter';
 import {initSearchResult} from './modules/search-result';
+import {initScrollUp} from './modules/init-scroll-up';
 
 // ---------------------------------
 
@@ -30,6 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
     initSearchResult();
+    initScrollUp();
   });
 });
 

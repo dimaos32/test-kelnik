@@ -804,6 +804,7 @@ template {
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -1181,6 +1182,7 @@ button,
 }
 
 .apartment-search__container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1212,6 +1214,60 @@ button,
   font-weight: 700;
   font-size: 54px;
   line-height: 1.02;
+}
+
+.apartment-search__scroll-up-btn {
+  padding: 0;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  right: calc(50% - 688px);
+  bottom: 32px;
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #95d0a1;
+  border: 2px solid #95d0a1;
+  border-radius: 50%;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.apartment-search__scroll-up-btn:not(:disabled) {
+  cursor: pointer;
+}
+
+.apartment-search__scroll-up-btn.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.apartment-search__scroll-up-btn svg {
+  display: block;
+  width: 10px;
+  height: 16px;
+}
+
+.apartment-search__scroll-up-btn:not(:disabled):hover,
+.apartment-search__scroll-up-btn:focus {
+  color: #3eb57c;
+  background-color: #ffffff;
+  border-color: #3eb57c;
 }
 
 .search-filter {

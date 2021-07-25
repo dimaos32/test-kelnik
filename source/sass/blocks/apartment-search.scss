@@ -4,6 +4,8 @@
 }
 
 .apartment-search__container {
+  position: relative;
+
   display: flex;
   align-items: flex-start;
   flex-direction: row-reverse;
@@ -26,4 +28,50 @@
   font-weight: 700;
   font-size: 54px;
   line-height: 1.02;
+}
+
+.apartment-search__scroll-up-btn {
+  @include reset-btn;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  right: calc(50% - 688px);
+  bottom: 32px;
+
+  width: 40px;
+  height: 40px;
+
+  color: $color-default-white;
+
+  background-color: $color-chinook;
+  border: 2px solid $color-chinook;
+  border-radius: 50%;
+
+  transition:
+    color $trans--300,
+    background-color $trans--300,
+    border-color $trans--300,
+    visibility $trans--300,
+    opacity $trans--300;
+
+  &.hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  svg {
+    display: block;
+    width: 10px;
+    height: 16px;
+  }
+
+  &:not(:disabled):hover,
+  &:focus {
+    color: $color-medium-sea-green;
+    background-color: $color-default-white;
+    border-color: $color-medium-sea-green;
+  }
 }
